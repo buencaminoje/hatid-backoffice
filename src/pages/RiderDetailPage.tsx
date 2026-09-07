@@ -126,13 +126,15 @@ export function RiderDetailPage() {
             return;
         }
 
+        const riderId = id;
+
         async function loadRider() {
             try {
                 setLoading(true);
                 setError("");
 
                 const response =
-                    await adminApi.rider(id);
+                    await adminApi.rider(riderId);
 
                 const data =
                     response.data?.data ??
@@ -157,10 +159,12 @@ export function RiderDetailPage() {
             return;
         }
 
+        const riderId = id;
+
         async function loadRides() {
             try {
                 const response =
-                    await adminApi.riderRides(id);
+                    await adminApi.riderRides(riderId);
 
                 const data =
                     response.data?.data ??

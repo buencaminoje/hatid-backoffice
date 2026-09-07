@@ -3,8 +3,6 @@ import {
     useState,
 } from "react";
 
-import logo from "../../../icon.png";
-
 import {
     NavLink,
     Outlet,
@@ -170,7 +168,7 @@ export function AppShell() {
             <aside className="sidebar">
                 <div className="brand">
                     <img
-                        src={logo}
+                        src="/icon.png"
                         alt="Hatid"
                         className="brand-logo"
                     />
@@ -196,8 +194,8 @@ export function AppShell() {
                                 to={to}
                                 end={to === "/"}
                                 className={({
-                                                isActive,
-                                            }) =>
+                                                 isActive,
+                                             }) =>
                                     isActive
                                         ? "nav-item active"
                                         : "nav-item"

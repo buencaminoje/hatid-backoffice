@@ -20,11 +20,7 @@ function Protected() {
         return <Navigate to="/login" replace/>;
     }
 
-    return (
-        <AppShell>
-            <Outlet/>
-        </AppShell>
-    );
+    return <AppShell/>;
 }
 
 export default function App() {
@@ -50,6 +46,7 @@ export default function App() {
                     path="/remittances"
                     element={<RemittancePage/>}
                 />
+
                 <Route
                     path="/available-rides"
                     element={<AvailableRidesPage/>}
@@ -76,20 +73,15 @@ export default function App() {
                             ]}
                             render={ride => [
                                 <span className="ride-id">
-                                    {ride.rideId?.slice(
-                                        0,
-                                        8
-                                    ) ?? "—"}
+                                    {ride.rideId?.slice(0, 8) ?? "—"}
                                 </span>,
 
                                 <span className="location-cell">
-                                    {ride.pickupLocation ??
-                                        "—"}
+                                    {ride.pickupLocation ?? "—"}
                                 </span>,
 
                                 <span className="location-cell">
-                                    {ride.dropLocation ??
-                                        "—"}
+                                    {ride.dropLocation ?? "—"}
                                 </span>,
 
                                 ride.type ?? "—",
@@ -97,20 +89,17 @@ export default function App() {
                                 ride.category ?? "—",
 
                                 `₱${Number(
-                                    ride.fare ?? 0
-                                ).toFixed(2)}`,
+    ride.fare ?? 0
+).toFixed(2)}`,
 
                                 ride.payMethod ?? "—",
 
                                 <span
                                     className={`status status-${(
-                                        ride.status ?? ""
-                                    )
-                                        .toLowerCase()
-                                        .replace(
-                                            /\s+/g,
-                                            "-"
-                                        )}`}
+    ride.status ?? ""
+)
+    .toLowerCase()
+    .replace(/\s+/g, "-")}`}
                                 >
                                     {ride.status ?? "—"}
                                 </span>,
@@ -150,43 +139,33 @@ export default function App() {
                             ]}
                             render={customer => [
                                 <span className="ride-id">
-                                    {customer.profileId?.slice(
-                                        0,
-                                        8
-                                    ) ?? "—"}
+                                    {customer.profileId?.slice(0, 8) ?? "—"}
                                 </span>,
 
                                 <div className="customer-list-profile">
                                     <div className="customer-list-name">
                                         <strong>
-                                            {customer.fullName ??
-                                                "—"}
+                                            {customer.fullName ?? "—"}
                                         </strong>
                                     </div>
                                 </div>,
 
-                                customer.mobileNumber ??
-                                "—",
+                                customer.mobileNumber ?? "—",
 
-                                customer.email ??
-                                "—",
+                                customer.email ?? "—",
 
                                 <span className="wallet-balance">
                                     ₱{Number(
-                                    customer.walletBalance ??
-                                    0
-                                ).toFixed(2)}
+                                        customer.walletBalance ?? 0
+                                    ).toFixed(2)}
                                 </span>,
 
                                 <span
                                     className={`status status-${String(
-                                        customer.status ?? ""
-                                    )
-                                        .toLowerCase()
-                                        .replace(
-                                            /\s+/g,
-                                            "-"
-                                        )}`}
+    customer.status ?? ""
+)
+    .toLowerCase()
+    .replace(/\s+/g, "-")}`}
                                 >
                                     {customer.status ?? "—"}
                                 </span>,
@@ -228,67 +207,53 @@ export default function App() {
                             ]}
                             render={rider => [
                                 <span className="ride-id">
-                                    {rider.profileId?.slice(
-                                        0,
-                                        8
-                                    ) ?? "—"}
+                                    {rider.profileId?.slice(0, 8) ?? "—"}
                                 </span>,
 
                                 <div className="rider-list-profile">
                                     <div className="rider-list-name">
                                         <strong>
-                                            {rider.fullName ??
-                                                "—"}
+                                            {rider.fullName ?? "—"}
                                         </strong>
                                     </div>
                                 </div>,
 
-                                rider.mobileNumber ??
-                                "—",
+                                rider.mobileNumber ?? "—",
 
                                 <span className="vehicle-cell">
-                                    {rider.vehicleType ??
-                                        "—"}
+                                    {rider.vehicleType ?? "—"}
                                 </span>,
 
-                                rider.plateNo ??
-                                "—",
+                                rider.plateNo ?? "—",
 
                                 <span
                                     className={
-                                        Number(
-                                            rider.walletBalance ??
-                                            0
-                                        ) < 0
+                                        Number(rider.walletBalance ?? 0) < 0
                                             ? "wallet-balance wallet-balance-negative"
                                             : "wallet-balance"
                                     }
                                 >
                                     ₱{Number(
-                                    rider.walletBalance ??
-                                    0
-                                ).toFixed(2)}
+                                        rider.walletBalance ?? 0
+                                    ).toFixed(2)}
                                 </span>,
 
                                 <span
                                     className={`status status-${String(
-                                        rider.status ?? ""
-                                    )
-                                        .toLowerCase()
-                                        .replace(
-                                            /\s+/g,
-                                            "-"
-                                        )}`}
+    rider.status ?? ""
+)
+    .toLowerCase()
+    .replace(/\s+/g, "-")}`}
                                 >
                                     {rider.status ?? "—"}
                                 </span>,
 
                                 <span
                                     className={`status ${
-                                        rider.isOnline
-                                            ? "status-online"
-                                            : "status-offline"
-                                    }`}
+    rider.isOnline
+        ? "status-online"
+        : "status-offline"
+}`}
                                 >
                                     {rider.isOnline
                                         ? "Online"

@@ -148,6 +148,8 @@ export function RideDetailPage() {
             return;
         }
 
+        const rideId = id;
+
         let cancelled = false;
 
         async function loadData() {
@@ -155,7 +157,7 @@ export function RideDetailPage() {
                 setLoading(true);
                 setError("");
 
-                const ride = await loadRide(id);
+                const ride = await loadRide(rideId);
 
                 if (!cancelled) {
                     setData(ride);

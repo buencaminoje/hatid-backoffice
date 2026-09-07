@@ -2874,12 +2874,11 @@ tbody tr:hover {
 }
 
 .sales-main-panel,
-.sales-analysis-panel,
-.sales-financial-panel {
-    padding: 22px;
+.sales-analysis-panel {
+    padding: 18px;
 }
 
-.sales-panel-header {
+.sales-table-panel .sales-panel-header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -3337,28 +3336,6 @@ tbody tr:hover {
         height: 205px;
     }
 }
-{
-.sales-main-panel,
-.sales-analysis-panel {
-    padding: 18px;
-}
-
-.sales-table-panel .sales-panel-header {
-    padding: 0 18px;
-}
-
-.sales-chart {
-    min-height: 270px;
-}
-
-.sales-chart-bars {
-    height: 240px;
-}
-
-.sales-chart-bar-area {
-    height: 205px;
-}
-}
 
 .remittance-overview {
     display: grid;
@@ -3616,10 +3593,10 @@ tbody tr:hover {
     }
 }
 
-   .dashboard-page {
-       width: 100%;
-       min-width: 0;
-   }
+.dashboard-page {
+    width: 100%;
+    min-width: 0;
+}
 
 .dashboard-heading {
     margin-bottom: 26px;

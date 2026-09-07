@@ -118,14 +118,12 @@ export function CustomerDetailPage() {
 
     useEffect(() => {
         if (!id) {
-            setError(
-                "Customer ID is missing."
-            );
-
+            setError("Customer ID is missing.");
             setLoading(false);
-
             return;
         }
+
+        const customerId = id;
 
         async function loadCustomer() {
             try {
@@ -133,7 +131,7 @@ export function CustomerDetailPage() {
                 setError("");
 
                 const response =
-                    await adminApi.customer(id);
+                    await adminApi.customer(customerId);
 
                 const data =
                     response.data?.data ??
@@ -158,10 +156,12 @@ export function CustomerDetailPage() {
             return;
         }
 
+        const customerId = id;
+
         async function loadRides() {
             try {
                 const response =
-                    await adminApi.customerRides(id);
+                    await adminApi.customerRides(customerId);
 
                 const data =
                     response.data?.data ??
