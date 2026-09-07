@@ -16,6 +16,8 @@ import {
     RiderRemittance,
 } from "../api/admin";
 
+import { Link } from "react-router-dom";
+
 function getRiderId(rider: RiderRemittance) {
     return (
         rider.profileId ??
@@ -452,15 +454,13 @@ export function RemittancePage() {
 
                                                 <td>
                                                     {riderId && (
-                                                        <a
-                                                            href={`/riders/${riderId}`}
+                                                        <Link
+                                                            to={`/riders/${riderId}`}
                                                             className="detail-link remittance-view-link"
                                                         >
                                                             View
-                                                            <ArrowRight
-                                                                size={14}
-                                                            />
-                                                        </a>
+                                                            <ArrowRight size={14} />
+                                                        </Link>
                                                     )}
                                                 </td>
                                             </tr>
