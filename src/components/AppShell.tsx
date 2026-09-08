@@ -28,6 +28,7 @@ import {
     tokenStorage,
     userStorage,
 } from "../api/client";
+import icon from "../../icon.png";
 
 const items = [
     {
@@ -167,8 +168,9 @@ export function AppShell() {
         <div className="app-shell">
             <aside className="sidebar">
                 <div className="brand">
+
                     <img
-                        src="/icon.png"
+                        src={icon}
                         alt="Hatid"
                         className="brand-logo"
                     />
